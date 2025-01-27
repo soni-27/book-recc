@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get "books/index"
+  get "books/show"
+  get "books/new"
+  get "books/edit"
+  get "shelves/index"
+  get "shelves/show"
+  get "shelves/new"
+  get "shelves/edit"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
