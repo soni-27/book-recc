@@ -9,10 +9,9 @@ class ShelvesController < ApplicationController
 
   # GET /shelves/:id
   def show
-    if !@shelf.public && @shelf.user != current_user
+    @shelf = Shelf.find(params[:id])
+    unless @shelf.public || current_user == @shelf.user
       redirect_to shelves_path, alert: "You are not authorized to view this shelf."
-    else
-      @books = @shelf.books
     end
   end
 

@@ -3,10 +3,10 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = current_user.books
-    if params[:tags].present?
-      tags = params[:tags].split(",").map(&:strip)
-      @books = @books.where("tags ILIKE ANY (array[?])", tags.map { |tag| "%#{tag}%" })
+    if params[:query].present?
+      @books = current_user.books.where("tags ILIKE ?", "%#{params[:query]}%")
+    else
+      @books = current_user.books
     end
   end
 
