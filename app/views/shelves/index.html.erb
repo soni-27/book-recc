@@ -15,3 +15,8 @@
     <%= link_to "Delete", shelf_path(shelf), method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
 <% end %>
+
+<div class="actions">
+  <%= link_to 'Create New Shelf', new_shelf_path, class: 'btn btn-primary' %>
+  <%= link_to 'Add New Book', new_book_path, class: 'btn btn-secondary' %>
+</div>

@@ -1,2 +1,8 @@
-<h1>Shelves#new</h1>
-<p>Find me in app/views/shelves/new.html.erb</p>
+<h1>Create a New Shelf</h1>
+
+<%= form_with model: @shelf, local: true do |form| %>
+  <%= render 'form', form: form %>
+  <div class="actions">
+    <%= form.submit "Create Shelf" %>
+  </div>
+<% end %>

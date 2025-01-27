@@ -4,7 +4,7 @@ class ShelvesController < ApplicationController
   # GET /shelves
   def index
     @public_shelves = Shelf.where(public: true)
-    @my_shelves = current_user.shelves
+    @my_shelves = current_user&.shelves || []
   end
 
   # GET /shelves/:id
