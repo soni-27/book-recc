@@ -18,10 +18,10 @@ gem "stimulus-rails"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
-gem 'devise'      # User authentication
-gem 'image_processing' # For image uploads
-gem 'active_storage_validations' # For validating uploaded images
-gem 'bootstrap', '~> 5.3.0' # Optional: For styling
+gem "devise"      # User authentication
+gem "image_processing" # For image uploads
+gem "active_storage_validations" # For validating uploaded images
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
