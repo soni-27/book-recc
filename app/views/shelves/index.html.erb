@@ -1,2 +1,17 @@
-<h1>Shelves#index</h1>
-<p>Find me in app/views/shelves/index.html.erb</p>
+<h1>Public Shelves</h1>
+<% @public_shelves.each do |shelf| %>
+  <div>
+    <h2><%= link_to shelf.title, shelf_path(shelf) %></h2>
+    <p><%= shelf.description %></p>
+  </div>
+<% end %>
+
+<h1>My Shelves</h1>
+<% @my_shelves.each do |shelf| %>
+  <div>
+    <h2><%= link_to shelf.title, shelf_path(shelf) %></h2>
+    <p><%= shelf.description %></p>
+    <%= link_to "Edit", edit_shelf_path(shelf) %> |
+    <%= link_to "Delete", shelf_path(shelf), method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+<% end %>

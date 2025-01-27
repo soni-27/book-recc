@@ -1,2 +1,8 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1><%= @book.name %></h1>
+<p><strong>Author:</strong> <%= @book.author %></p>
+<p><strong>About:</strong> <%= @book.about %></p>
+<p><strong>Tags:</strong> <%= @book.tags %></p>
+
+<% if @book.image.attached? %>
+  <%= image_tag @book.image %>
+<% end %>

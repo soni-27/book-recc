@@ -1,2 +1,14 @@
-<h1>Shelves#show</h1>
-<p>Find me in app/views/shelves/show.html.erb</p>
+<h1><%= @shelf.title %></h1>
+<p><%= @shelf.description %></p>
+
+<% if @shelf.public || @shelf.user == current_user %>
+  <h2>Books in this Shelf</h2>
+  <% @shelf.books.each do |book| %>
+    <div>
+      <h3><%= link_to book.name, book_path(book) %></h3>
+      <p><%= book.author %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>This shelf is private.</p>
+<% end %>
