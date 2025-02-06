@@ -1,2 +1,11 @@
-<h1>Shelves#edit</h1>
-<p>Find me in app/views/shelves/edit.html.erb</p>
+<h1>Edit Shelf</h1>
+
+<%= form_with model: @shelf, local: true do |form| %>
+  <%= render 'form', form: form %>
+
+  <div class="actions">
+    <%= form.submit "Update Shelf", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to My Shelves", shelves_path, class: "btn btn-secondary" %>

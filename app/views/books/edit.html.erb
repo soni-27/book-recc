@@ -1,2 +1,11 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Edit Book</h1>
+
+<%= form_with model: @book, local: true do |form| %>
+  <%= render 'form', form: form %>
+  
+  <div class="actions">
+    <%= form.submit "Update Book" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to My Books", books_path, class: "btn btn-secondary" %>

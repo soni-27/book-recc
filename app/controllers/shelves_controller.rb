@@ -31,7 +31,9 @@ class ShelvesController < ApplicationController
   end
 
   # GET /shelves/:id/edit
-  def edit; end
+  def edit
+    @shelf = Shelf.find(params[:id])
+  end
 
   # PATCH/PUT /shelves/:id
   def update
